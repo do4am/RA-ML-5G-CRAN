@@ -1,9 +1,10 @@
 import pandas as pd
 import numpy as np
 import tensorflow as tf
-import tensorflowvisu
+import tensorflowvisu #modified
 import scipy.io
 import math
+
 
 # extract unique labels from dataset
 def unique(arr_data):

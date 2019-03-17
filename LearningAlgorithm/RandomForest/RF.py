@@ -1,5 +1,5 @@
 import pandas as pd
-from sklearn.ensemble import RandomForestClassifier #classification problem
+from sklearn.ensemble import RandomForestClassifier #classification with RandomForest
 
 testing_txt = 'Testing/testRF_S5.csv'
 training_txt = 'Training/trainRF_S5_Merger.csv'
@@ -11,7 +11,7 @@ trainData.head()
 
 rows, cols = trainData.shape
 
-x = trainData.iloc[:, 0:cols-1].values  #attributes
+x = trainData.iloc[:, 0:cols-1].values  #features
 y = trainData.iloc[:, cols-1].values    #labels
 
 #Grown a forest and fit it to the trainData
