@@ -1,5 +1,5 @@
 # Application of Machine learning to resource allocation for CRAN based 5G system
-http://kth.diva-portal.org/smash/get/diva2:1184298/FULLTEXT01.pdf
+https://ieeexplore.ieee.org/document/8369028 
 
 # Idea
 CRAN is Cloud Radio Access Network
