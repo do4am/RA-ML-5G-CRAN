@@ -187,7 +187,6 @@ def training_step(i, update_test_data, update_train_data):
         np.savetxt(record_test_txt, record_test, fmt=['%i', '%1.3f', '%1.3f'], delimiter=',')
 
 
-
 def testing_step(testing_dir, output_dir):
     labels_remapped = []
     x_test = get_data(testing_dir)
