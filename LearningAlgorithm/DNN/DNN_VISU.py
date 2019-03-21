@@ -104,7 +104,7 @@ b_2 = tf.Variable(tf.zeros([hlayer_neurons[1]]), dtype = tf.float32, name='b_2',
 W_3 = tf.Variable(tf.random_normal([hlayer_neurons[1], hlayer_neurons[2]], stddev=0.1), name='W_3', trainable=True)
 b_3 = tf.Variable(tf.zeros([hlayer_neurons[2]]), dtype = tf.float32, name='b_3', trainable=True) # small initialised val = 0.1
 
-W_out = tf.Variable(tf.random_normal([hlayer_neurons[-1], no_labels], stddev=0.1), name='W_out')
+W_out = tf.Variable(tf.random_normal([hlayer_neurons[-1], no_labels], stddev=0.1), name='W_out') #dynamic outputs labels
 b_out = tf.Variable(tf.ones([no_labels])/10, dtype = tf.float32, name='b_out')
 
 # learning model
@@ -116,7 +116,6 @@ h2 = tf.nn.dropout(h2, pkeep)
 
 h3 = tf.nn.relu(tf.add(tf.matmul(h2, W_3), b_3))  # hidden layer 3
 h3 = tf.nn.dropout(h3, pkeep)
-
 
 Ylogits = tf.add(tf.matmul(h3, W_out), b_out) # output layer: if using tf.soft_max_cross_entropy as cost function
 Y_predict = tf.nn.softmax(Ylogits)  # output_layer to one-hot vector
@@ -144,11 +143,11 @@ init_g = tf.global_variables_initializer()
 sess = tf.Session()
 sess.run(init_g)
 
-# pre-trained last layer
+# to restore parts of pre-trained model. Set trainable = False to prevent paramters from learning
 saver_finetuning = tf.train.Saver({'W_1': W_1, 'W_2': W_2, 'W_3': W_3,
                                    'b_1': b_1, 'b_2': b_2, 'b_3': b_3}) # 3layers
 
-
+# to save/restore the whole pre-trained model. 
 saver_current = tf.train.Saver({'W_1': W_1, 'W_2': W_2, 'W_3': W_3, 'W_out' : W_out,
                                 'b_1': b_1, 'b_2': b_2, 'b_3': b_3, 'b_out' : b_out}
                                , max_to_keep=100)
@@ -214,9 +213,8 @@ print('Labels:' + str(len(labels)))
 for i in range(0, iterations + 1):
     training_step(i, i%100 == 0, i%20 == 0)
 
-#
 # Testing
-testing_step(testing_txt, output_txt) # get the predicited labels
+testing_step(testing_txt, output_txt) # get the predicited labels.
 
 sess.close()
 print('Done !\n')
