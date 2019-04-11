@@ -1,5 +1,5 @@
-# Application of Machine learning to resource allocation for CRAN based 5G system
-https://ieeexplore.ieee.org/document/8369028 
+# Iternship topic: Application of Machine learning to resource allocation for CRAN based 5G system
+Imtiaz, S., Koudouridis, G.P., Ghauch, H. and Gross, J., 2018. Random forests for resource allocation in 5G cloud radio access networks based on position information. EURASIP Journal on Wireless Communications and Networking, 2018(1), p.142.
 
 # Idea
 CRAN is Cloud Radio Access Network
