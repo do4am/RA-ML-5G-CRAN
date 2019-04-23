@@ -39,7 +39,7 @@ def get_data_training(train_txt, val_txt):
     y_mapped = []
     for value in y_train:
         y_mapped.append(labels.index(value))
-    y_train = np.eye(len(labels))[y_mapped]
+    y_train = np.eye(len(labels))[y_mapped] # convert "labels" to one-hot vector
 
     Data = pd.read_csv(val_txt, sep=',', header=None)
     rows, cols = Data.shape
@@ -96,16 +96,16 @@ pkeep = tf.placeholder(tf.float32)
 
 # initialise weight and bias at each layer
 W_1 = tf.Variable(tf.random_normal([x_train.shape[1], hlayer_neurons[0]], stddev=0.1), name='W_1', trainable=True)
-b_1 = tf.Variable(tf.zeros([hlayer_neurons[0]]), dtype = tf.float32, name='b_1', trainable=True) # small initialised val = 0.1
+b_1 = tf.Variable(tf.zeros([hlayer_neurons[0]]), dtype = tf.float32, name='b_1', trainable=True) 
 
 W_2 = tf.Variable(tf.random_normal([hlayer_neurons[0], hlayer_neurons[1]], stddev=0.1),name='W_2', trainable=True)
-b_2 = tf.Variable(tf.zeros([hlayer_neurons[1]]), dtype = tf.float32, name='b_2', trainable=True) # small initialised val = 0.1
+b_2 = tf.Variable(tf.zeros([hlayer_neurons[1]]), dtype = tf.float32, name='b_2', trainable=True) 
 
 W_3 = tf.Variable(tf.random_normal([hlayer_neurons[1], hlayer_neurons[2]], stddev=0.1), name='W_3', trainable=True)
-b_3 = tf.Variable(tf.zeros([hlayer_neurons[2]]), dtype = tf.float32, name='b_3', trainable=True) # small initialised val = 0.1
+b_3 = tf.Variable(tf.zeros([hlayer_neurons[2]]), dtype = tf.float32, name='b_3', trainable=True) 
 
-W_out = tf.Variable(tf.random_normal([hlayer_neurons[-1], no_labels], stddev=0.1), name='W_out') #dynamic outputs labels
-b_out = tf.Variable(tf.ones([no_labels])/10, dtype = tf.float32, name='b_out')
+W_out = tf.Variable(tf.random_normal([hlayer_neurons[-1], no_labels], stddev=0.1), name='W_out') #output layers
+b_out = tf.Variable(tf.ones([no_labels])/10, dtype = tf.float32, name='b_out') # initialised = 0.1
 
 # learning model
 h1 = tf.nn.relu(tf.add(tf.matmul(X, W_1), b_1))  # hidden layer 1
@@ -117,11 +117,11 @@ h2 = tf.nn.dropout(h2, pkeep)
 h3 = tf.nn.relu(tf.add(tf.matmul(h2, W_3), b_3))  # hidden layer 3
 h3 = tf.nn.dropout(h3, pkeep)
 
-Ylogits = tf.add(tf.matmul(h3, W_out), b_out) # output layer: if using tf.soft_max_cross_entropy as cost function
-Y_predict = tf.nn.softmax(Ylogits)  # output_layer to one-hot vector
+Ylogits = tf.add(tf.matmul(h3, W_out), b_out) # output in the form of one-hot vector
+Y_predict = tf.nn.softmax(Ylogits)  # normalised to probability.
 
 # cost function for multi-classification. labels > 2: Cross_entropy
-loss = tf.nn.softmax_cross_entropy_with_logits(logits=Ylogits, labels=Y_true)
+loss = tf.nn.softmax_cross_entropy_with_logits(logits=Ylogits, labels=Y_true) #equivalent to cross_entropy(Y_predict, Y_true)
 loss = tf.reduce_mean(loss)*100
 
 # training accuracy
@@ -180,12 +180,12 @@ def training_step(i, update_test_data, update_train_data):
 
     # back propagation training_step
     sess.run(train_step, feed_dict={X: batch_X, Y_true: batch_Y,  pkeep: 1.0, step: i})
+    
     if i % 50000 == 0:
         save_path = saver_current.save(sess, model_txt, global_step=i)
         print('save model to: {}'.format(save_path))
         np.savetxt(record_train_txt, record_train, fmt=['%i', '%1.3f', '%1.3f', '%1.5f'], delimiter=',')
         np.savetxt(record_test_txt, record_test, fmt=['%i', '%1.3f', '%1.3f'], delimiter=',')
-
 
 
 def testing_step(testing_dir, output_dir):

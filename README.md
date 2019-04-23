@@ -1,5 +1,5 @@
-# Application of Machine learning to resource allocation for CRAN based 5G system
-https://ieeexplore.ieee.org/document/8369028 
+# Internship topic: Application of Machine learning to resource allocation for CRAN based 5G system
+Imtiaz, S., Koudouridis, G.P., Ghauch, H. and Gross, J., 2018. Random forests for resource allocation in 5G cloud radio access networks based on position information. EURASIP Journal on Wireless Communications and Networking, 2018(1), p.142.
 
 # Idea
 CRAN is Cloud Radio Access Network
@@ -18,17 +18,12 @@ To generate the dataset for training: Exhaustive search is used as follows <br /
 First all possible channel impulse resonses matrices are simulated and stored in H. <br />
 Given a street map. Randomly select a position on the map (euclidean-based), embedded this position with all channel matrices in H. Run exhaustive search to find which RAs yield the best goodput for each channel matrix. Collect them. Repeat the step with another random position until we find the amount of data is sufficient for training. <br />
 
-One note is, the exhaustive search is actually the way the station perform after receiving the CSI estimated from the receiver to determine which RA should be assigned to that UE. Therefore, in term of goodput performance, the CSI-based approach alway yields the best result. The idea is to try achive as close as goodput performance of CSI-based approach as possible utilizing the learning-based approach. <br />
-
 Dataset: Input: position (euclidean-based); Labels/Classes: RAs corresponding to that position. <br />
 
-This dataset has a problem: One input data belongs to different classes (figure below). Datapoints line within the overlapping region will cause the confusion in the training process (for Random Forest and deep neural network). And thus the training results are not optimised. <br />
+This dataset has a problem: Overlapping as shown in the picture.
 
 ![image](https://user-images.githubusercontent.com/15823161/52287627-d21e8b00-296a-11e9-9e8b-52aa4f4cb889.png)
 
-Need a criteria to remove the overlapping, so that, one input data belongs to one and only one class. This process of removing overlapping called homogeneousity - removal of overlapping to maximise the learning process - we expect that the goodput performance will be closer to the that of CSI-based approach <br />
-
-A heuristic solution for homogenousity is applied first and we already see some improvement. An optimal solution is still on study.
 
 # Built with 
 Python 2.7 <br />
