@@ -1,10 +1,10 @@
 function [V_lib, cl_size] = cl_simpleassignment(iV, V_lib, i_neighbors, cl_size)
+% First phase
+% @INPUT:
 %iV index of current Vertice
 %V library
 %i_neighbors idex of neighbors to current vertex, descending order of distance
 %current size of all classes
-%mode1 : assign to largest sample size class
-%mode2 : force assignment
 
     n_idx = length(i_neighbors);
     class_name = {};
@@ -16,11 +16,13 @@ function [V_lib, cl_size] = cl_simpleassignment(iV, V_lib, i_neighbors, cl_size)
         %export all the classes of the neighbors
         [~,~,class_name{i}] = find(V_lib(i_neighbors(i),:)); %#ok<AGROW>
     end 
-
+    
+    % find common classes between samples and its neighbors
     Vi_int_neighbors = intersect([class_name{:}], Vi_classes);  
     l = length(Vi_int_neighbors);
     
-    if l >= 1
+    % this condition indicate there is common_classes between samples and its neighbors
+    if l == 1
         V_lib(iV,Vi_classes_idx) = 0;
         V_lib(iV,(1:l)+1) = Vi_int_neighbors; 
         

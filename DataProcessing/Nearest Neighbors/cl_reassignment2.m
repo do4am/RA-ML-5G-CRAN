@@ -1,4 +1,6 @@
 function [V_lib, cl_size] = cl_reassignment2(iV, V_lib, i_neighbors, cl_size)
+% Second phase: forcefully assignment
+% @INPUT:
 %iV index of current Vertice
 %V library
 %i_neighbors idex of neighbors to current vertex
@@ -22,24 +24,24 @@ function [V_lib, cl_size] = cl_reassignment2(iV, V_lib, i_neighbors, cl_size)
     
     %Reassignment alogirthm
     if n_common == 1   
-        V_lib(iV,2) = commons{:};  %set value to any colums of lib does not matter         
+        V_lib(iV,2) = commons{:};  %set value to any colums of library does not matter         
     
     elseif f_commons > 1 %at least a common class between neighbors        
             max_cl_size = [0 0];
             for i = 1:n_common
                 current_cl_size = cl_size(cl_size(:,1) == commons{:}(i),2);
-                if max_cl_size(1) < current_cl_size %assign to larger class
+                if max_cl_size(1) < current_cl_size %assign to the largest class
                     max_cl_size = [current_cl_size i];
                 end
             end
             V_lib(iV,2) = commons{:}(max_cl_size(2));
         
     else %no common RAs between neighbors
-        %closest neighbor
+        % find the closest neighbor to samples
         max_cl_size = [0 0];
         for i = 1:length(class_name{1,1}(:))
             current_cl_size = cl_size(cl_size(:,1) == class_name{1,1}(i),2);
-            if max_cl_size(1) < current_cl_size
+            if max_cl_size(1) < current_cl_size %assign to the largest class
                 max_cl_size = [current_cl_size i];
             end
         end 
@@ -47,14 +49,12 @@ function [V_lib, cl_size] = cl_reassignment2(iV, V_lib, i_neighbors, cl_size)
         V_lib(iV,2) = class_name{1,1}(max_cl_size(2));   
     end
     
-    %update cl_size set        
+    %update cl_size and library 
     for i = 1:length(Vi_classes)
         cl_size(cl_size(:,1) == Vi_classes(i),2) = ...
             cl_size(cl_size(:,1) == Vi_classes(i),2) - 1;
     end    
     cl_size(cl_size(:,1) == V_lib(iV,2),2)  = ...
          cl_size(cl_size(:,1) == V_lib(iV,2),2)  + 1;
-    %common_class_neighbor = intersect(class_name{:},Vi_classes
-    %
-    
+
    
