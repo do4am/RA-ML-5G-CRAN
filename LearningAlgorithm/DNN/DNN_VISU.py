@@ -1,3 +1,4 @@
+#!/usr/bin/env python   #(for python 2.7)
 import pandas as pd
 import numpy as np
 import tensorflow as tf
