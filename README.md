@@ -26,12 +26,12 @@ This dataset has a problem: Overlapping as shown in the picture.
 
 Dissertation: 
 Visualization of Raw dataset:
-![ScPlotS1](https://user-images.githubusercontent.com/15823161/59569712-b43a0300-908d-11e9-83ae-09a3b7f6267d.jpg|width=50)
+![ScPlotS1](https://user-images.githubusercontent.com/15823161/59569712-b43a0300-908d-11e9-83ae-09a3b7f6267d.jpg)
 
 Processing directly to the raw dataset before feeding them through a neural network.
 After being processed:
 
-![ScPlotS1NN](https://user-images.githubusercontent.com/15823161/59569723-d6cc1c00-908d-11e9-9e8a-7a9478101cb6.jpg|width = 50)
+![ScPlotS1NN](https://user-images.githubusercontent.com/15823161/59569723-d6cc1c00-908d-11e9-9e8a-7a9478101cb6.jpg?v=4&s=200)
 
 Overall system performance gained 10% without losing a single bit of raw data. 
 # Built with 
