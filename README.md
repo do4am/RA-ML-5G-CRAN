@@ -3,9 +3,9 @@ Imtiaz, S., Koudouridis, G.P., Ghauch, H. and Gross, J., 2018. Random forests fo
 
 # Idea
 CRAN is Cloud Radio Access Network
-
+<p align="center">
 ![image](https://user-images.githubusercontent.com/15823161/52285347-73571280-2966-11e9-94d8-fec46d2230a7.png)
-
+</p>
 The resource allocation (RA - a combination of Transmission Beam Tx, Received Filter Rx and MCS M) is done via the downlink communication between RRH and UE. The scenario of this project is 1 Remote Radio Head (RRH) and 1 User(UE) (the red region). <br />
 
 Traditional approach is to do RA based on Channel State Information (CSI) has several signigficant drawbacks: Computational cost and overhead time-slots in TDD system. A learning-based approach is designed to overcome the problem. <br />
@@ -21,21 +21,19 @@ Given a street map. Randomly select a position on the map (euclidean-based), emb
 Dataset: Input: position (euclidean-based); Labels/Classes: RAs corresponding to that position. <br />
 
 This dataset has a problem: Overlapping as shown in the picture.
-
+<p align="center">
 ![image](https://user-images.githubusercontent.com/15823161/52287627-d21e8b00-296a-11e9-9e8b-52aa4f4cb889.png)
-
+</p>
 Dissertation: 
 Visualization of Raw dataset:
 <p align="center">
   <img src="https://user-images.githubusercontent.com/15823161/59569712-b43a0300-908d-11e9-83ae-09a3b7f6267d.jpg" width="300" > 
 </p>
-
 Processing directly to the raw dataset before feeding them through a neural network.
 After being processed:
 <p align="center">
   <img src="https://user-images.githubusercontent.com/15823161/59569723-d6cc1c00-908d-11e9-9e8a-7a9478101cb6.jpg" width="300"> 
 </p>
-
 Overall system performance gained 10% without losing a single bit of raw data. 
 # Built with 
 Python 2.7 <br />
