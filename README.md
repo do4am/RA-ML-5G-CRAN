@@ -35,6 +35,7 @@ After being processed:
   <img src="https://user-images.githubusercontent.com/15823161/59569723-d6cc1c00-908d-11e9-9e8a-7a9478101cb6.jpg" width="300"> 
 </p>
 Overall system performance gained 10% without losing a single bit of raw data. 
+
 # Built with 
 Python 2.7 <br />
 Matlab
