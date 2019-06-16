@@ -4,7 +4,7 @@ Imtiaz, S., Koudouridis, G.P., Ghauch, H. and Gross, J., 2018. Random forests fo
 # Idea
 CRAN is Cloud Radio Access Network
 <p align="center">
-![image](https://user-images.githubusercontent.com/15823161/52285347-73571280-2966-11e9-94d8-fec46d2230a7.png)
+  <img src="https://user-images.githubusercontent.com/15823161/52285347-73571280-2966-11e9-94d8-fec46d2230a7.png">
 </p>
 The resource allocation (RA - a combination of Transmission Beam Tx, Received Filter Rx and MCS M) is done via the downlink communication between RRH and UE. The scenario of this project is 1 Remote Radio Head (RRH) and 1 User(UE) (the red region). <br />
 
@@ -22,7 +22,7 @@ Dataset: Input: position (euclidean-based); Labels/Classes: RAs corresponding to
 
 This dataset has a problem: Overlapping as shown in the picture.
 <p align="center">
-![image](https://user-images.githubusercontent.com/15823161/52287627-d21e8b00-296a-11e9-9e8b-52aa4f4cb889.png)
+  <img src="https://user-images.githubusercontent.com/15823161/52287627-d21e8b00-296a-11e9-9e8b-52aa4f4cb889.png">
 </p>
 Dissertation: 
 Visualization of Raw dataset:
