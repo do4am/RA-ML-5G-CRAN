@@ -24,11 +24,13 @@ This dataset has a problem: Overlapping as shown in the picture.
 <p align="center">
   <img src="https://user-images.githubusercontent.com/15823161/52287627-d21e8b00-296a-11e9-9e8b-52aa4f4cb889.png">
 </p>
-Thesis: 
+Thesis Topic: Data Processing Techniques to Optimise the learning based resrouce allocation in wireless communication systems. 
 Visualization with Scatter Plot of Raw dataset:
 <p align="center">
   <img src="https://user-images.githubusercontent.com/15823161/59569712-b43a0300-908d-11e9-83ae-09a3b7f6267d.jpg" width="300" > 
 </p>
+As can be seen from the Scatter Plot, each of the colors represent for a class/ resource allocation. The scatter plot of all the samples in a street section of 6m x 25m , and the distribution of the classes among those samples. Since one samples may belong to multple classes, there is overlapping issue between classes.
+
 The original dataset has the problem of overlapping - one sample belongs to more than one class. The data processing algorithms, called Merger and Nearest Neightbors (NN) are applied to remove all the overlapping issue, make sure one sample belongs to a single class.
 
 Processing directly to the raw dataset before feeding them through a neural network.
