@@ -38,6 +38,9 @@ After being processed:
 <p align="center">
   <img src="https://user-images.githubusercontent.com/15823161/59569723-d6cc1c00-908d-11e9-9e8a-7a9478101cb6.jpg" width="300"> 
 </p>
+
+As can be seen clearly the processed picture look somewhat cleaner, the classes become more distinct. If you are interested in the insight analysis of the result please feel free to send me an email (Given at the end of this note).
+
 Overall system performance gained 10% without losing a single bit of raw data. 
 
 # Built with 
