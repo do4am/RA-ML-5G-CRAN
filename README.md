@@ -49,4 +49,3 @@ Overall system performance gained 10% without losing a single bit of raw data.
 Python 2.7 <br />
 Matlab
 
-Due to copyright issue the detail of the algorithms cannot be published. Please contact me via mhndo@kth.se if you want to discuss on something.
