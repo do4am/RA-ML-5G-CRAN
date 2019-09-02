@@ -24,7 +24,9 @@ This dataset has a problem: Overlapping as shown in the picture.
 <p align="center">
   <img src="https://user-images.githubusercontent.com/15823161/52287627-d21e8b00-296a-11e9-9e8b-52aa4f4cb889.png">
 </p>
-Thesis Topic: Data Processing Techniques to Optimise the learning based resrouce allocation in wireless communication systems. 
+
+__Thesis Topic: Data Processing Techniques to Optimise the learning based resrouce allocation in wireless communication systems.__
+
 Visualization with Scatter Plot of Raw dataset:
 <p align="center">
   <img src="https://user-images.githubusercontent.com/15823161/59569712-b43a0300-908d-11e9-83ae-09a3b7f6267d.jpg" width="300" > 
