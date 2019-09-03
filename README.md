@@ -49,3 +49,8 @@ Overall system performance gained 10% without losing a single bit of raw data.
 Python 2.7 <br />
 Matlab
 
+link: 
+https://github.com/do4am/RA-ML-5G-CRAN/blob/master/Analyzing%20Dataset.ipynb
+
+Mirror:
+https://nbviewer.jupyter.org/github/do4am/RA-ML-5G-CRAN/blob/master/Analyzing%20Dataset.ipynb
