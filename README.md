@@ -1,6 +1,13 @@
 # Internship topic: Application of Machine learning to resource allocation for CRAN based 5G system
 Imtiaz, S., Koudouridis, G.P., Ghauch, H. and Gross, J., 2018. Random forests for resource allocation in 5G cloud radio access networks based on position information. EURASIP Journal on Wireless Communications and Networking, 2018(1), p.142.
 
+# Analysis
+link: 
+https://github.com/do4am/RA-ML-5G-CRAN/blob/master/Analyzing%20Dataset.ipynb
+
+Mirror:
+https://nbviewer.jupyter.org/github/do4am/RA-ML-5G-CRAN/blob/master/Analyzing%20Dataset.ipynb
+
 # Idea
 CRAN is Cloud Radio Access Network
 <p align="center">
@@ -47,10 +54,5 @@ Overall system performance gained 10% without losing a single bit of raw data.
 
 # Built with 
 Python 2.7 <br />
-Matlab
+MATLAB
 
-link: 
-https://github.com/do4am/RA-ML-5G-CRAN/blob/master/Analyzing%20Dataset.ipynb
-
-Mirror:
-https://nbviewer.jupyter.org/github/do4am/RA-ML-5G-CRAN/blob/master/Analyzing%20Dataset.ipynb
